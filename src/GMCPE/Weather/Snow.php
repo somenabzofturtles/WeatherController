@@ -1,6 +1,6 @@
 <?php
 
-namespace GMCPE\Snow;
+namespace GMCPE\Weather;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
