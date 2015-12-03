@@ -20,15 +20,9 @@ use GMCPE\Weather\Snow;
 use GMCPE\Weather\Rain;
 
 class main extends PluginBase implements Listener {
-    	public $cooltime = 0;
-	public $m_version = 2, $pk;
 	
 	public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
-	}
-	public function onPlayerJoinEvent(PlayerJoinEvent $event) {
-	$this->Snow();
-	$this->Rain();
 	}
 }
 
