@@ -16,6 +16,7 @@ use pocketmine\event\level\ChunkLoadEvent;
 use pocketmine\level\generator\biome\Biome;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\network\protocol\LevelEventPacket;
+use GMCPE\Weather\main;
 
 class Snow extends PluginBase implements Listener {
     	public $cooltime = 0;
