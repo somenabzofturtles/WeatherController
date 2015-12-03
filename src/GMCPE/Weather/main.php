@@ -22,6 +22,7 @@ use GMCPE\Weather\Rain;
 class main extends PluginBase implements Listener {
 	
 	public function onEnable() {
+	$this->saveResource("Config.yml");	
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
 	}
 }
