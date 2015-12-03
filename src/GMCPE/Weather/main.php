@@ -32,16 +32,18 @@ class main extends PluginBase implements Listener {
 		$pk->data = 10000;
 		$player->dataPacket ( $pk );		
 		if ($this->getConfig()->get("Snow") === true) {
-		for($x = 0; $x < 16; ++ $x)
-			for($z = 0; $z < 16; ++ $z)
-				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );
+			$this->onChunkLoadEvent();
 		}
 		elseif ($this->getConfig()->get("Rain") === true) {
 		for($x = 0; $x < 16; ++ $x)
 			for($z = 0; $z < 16; ++ $z)
 				$event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );
 		}
-	}	
+	}
+	public function onChunkLoadEvent(ChunkLoadEvent $event) {
+		for($x = 0; $x < 16; ++ $x)
+			for($z = 0; $z < 16; ++ $z)
+				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );	
 }
 
 ?>
