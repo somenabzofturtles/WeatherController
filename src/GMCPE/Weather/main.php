@@ -26,13 +26,20 @@ class main extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
 	}
 	public function onPlayerJoinEvent(PlayerJoinEvent $event) {
+		$player = $event->getPlayer ();
+		$pk = new LevelEventPacket ();
+		$pk->evid = 3001;
+		$pk->data = 10000;
+		$player->dataPacket ( $pk );		
 		if ($this->getConfig()->get("Snow") === true) {
-		$this->Snow->onPlayerJoinEvent();
-		$this->Snow->onChunkLoadEvent();
+		for($x = 0; $x < 16; ++ $x)
+			for($z = 0; $z < 16; ++ $z)
+				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );
 		}
 		elseif ($this->getConfig()->get("Rain") === true) {
-		$this->Rain->onPlayerJoinEvent();
-		$this->Rain->onChunkLoadEvent();
+		for($x = 0; $x < 16; ++ $x)
+			for($z = 0; $z < 16; ++ $z)
+				$event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );
 		}
 	}	
 }
