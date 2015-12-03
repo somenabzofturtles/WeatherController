@@ -21,16 +21,12 @@ class Snow extends PluginBase implements Listener {
     	public $cooltime = 0;
 	public $m_version = 2, $pk;
 	
-	public function onEnable() {
-        $this->getServer()->getPluginManager()->registerEvents($this,$this);
-	}
-	
 	public function onChunkLoadEvent(ChunkLoadEvent $event) {
 		for($x = 0; $x < 16; ++ $x)
 			for($z = 0; $z < 16; ++ $z)
 				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );
 	}
-	public function onPlayerJoinEvent(PlayerJoinEvent $event) {
+	public function Snow(PlayerJoinEvent $event) {
 		$player = $event->getPlayer ();
 		$pk = new LevelEventPacket ();
 		$pk->evid = 3001;
