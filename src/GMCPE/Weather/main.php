@@ -30,19 +30,17 @@ class main extends PluginBase implements Listener {
 		$pk = new LevelEventPacket ();
 		$pk->evid = 3001;
 		$pk->data = 10000;
-		$player->dataPacket ( $pk );		
-		if ($this->getConfig()->get("Snow") === true) {
-			$this->onChunkLoadEvent();
-		}
-		elseif ($this->getConfig()->get("Rain") === true) {
-		for($x = 0; $x < 16; ++ $x)
-			for($z = 0; $z < 16; ++ $z)
-				$event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );
-		}
+		$player->dataPacket ( $pk );
 	}
+
 	public function onChunkLoadEvent(ChunkLoadEvent $event) {
 		for($x = 0; $x < 16; ++ $x)
 			for($z = 0; $z < 16; ++ $z)
-				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );	
+			if ($this->getConfig()->get("Snow") === true) {
+				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );
+			}
+			elseif ($this->getConfig()->get("Rain") === true) {
+			$event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );	
+			}	
 	}
 }	
