@@ -34,13 +34,15 @@ class main extends PluginBase implements Listener {
 	}
 
 	public function onChunkLoadEvent(ChunkLoadEvent $event) {
-		for($x = 0; $x < 16; ++ $x)
-			for($z = 0; $z < 16; ++ $z)
 			if ($this->getConfig()->get("Snow") === true) {
-				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );
+			for($x = 0; $x < 16; ++ $x)
+			        for($z = 0; $z < 16; ++ $z)			
+				        $event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );
 			}
 			elseif ($this->getConfig()->get("Rain") === true) {
-			$event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );	
+			for($x = 0; $x < 16; ++ $x)
+			        for($z = 0; $z < 16; ++ $z)			
+			                $event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );	
 			}	
 	}
 }	
