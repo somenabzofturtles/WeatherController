@@ -1,5 +1,5 @@
-name: Snow
-main: GMCPE\Snow\Snow
+name: WeatherController
+main: GMCPE\Weather\main
 version: 1.0
 author: Driesboy
 api:
