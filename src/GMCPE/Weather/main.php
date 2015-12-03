@@ -44,4 +44,5 @@ class main extends PluginBase implements Listener {
 		for($x = 0; $x < 16; ++ $x)
 			for($z = 0; $z < 16; ++ $z)
 				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );	
-}
+	}
+}	
