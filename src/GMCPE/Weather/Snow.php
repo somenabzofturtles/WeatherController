@@ -27,6 +27,7 @@ class Snow extends PluginBase implements Listener {
 				$event->getChunk ()->setBiomeId ( $x, $z, Biome::ICE_PLAINS );
 	}
 	public function Snow(PlayerJoinEvent $event) {
+		if ($this->getConfig()->get("Snow") === true)
 		$player = $event->getPlayer ();
 		$pk = new LevelEventPacket ();
 		$pk->evid = 3001;
