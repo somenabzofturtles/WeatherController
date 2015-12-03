@@ -28,9 +28,11 @@ class main extends PluginBase implements Listener {
 	public function onPlayerJoinEvent(PlayerJoinEvent $event) {
 		if ($this->getConfig()->get("Snow") === true) {
 		$this->Snow->onPlayerJoinEvent();
+		$this->Snow->onChunkLoadEvent();
 		}
 		elseif ($this->getConfig()->get("Rain") === true) {
 		$this->Rain->onPlayerJoinEvent();
+		$this->Rain->onChunkLoadEvent();
 		}
 	}	
 }
