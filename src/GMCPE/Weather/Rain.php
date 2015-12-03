@@ -27,6 +27,7 @@ class Rain extends PluginBase implements Listener {
 				$event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );
 	}
 	public function Rain(PlayerJoinEvent $event) {
+		if ($this->getConfig()->get("Rain") === true)
 		$player = $event->getPlayer();
 		$pk = new LevelEventPacket();
 		$pk->evid = 3001;
