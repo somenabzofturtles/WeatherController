@@ -1,6 +1,6 @@
 <?php
 
-namespace GMCPE\Rain;
+namespace GMCPE\Weather;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -18,20 +18,15 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\network\protocol\LevelEventPacket;
 
 class Rain extends PluginBase implements Listener {
-	
     	public $cooltime = 0;
 	public $m_version = 2, $pk;
-	
-	public function onEnable() {
-        $this->getServer()->getPluginManager()->registerEvents($this,$this);
-	}
-	
+
 	public function onChunkLoadEvent(ChunkLoadEvent $event) {
 		for($x = 0; $x < 16; ++ $x)
 			for($z = 0; $z < 16; ++ $z)
 				$event->getChunk ()->setBiomeId ( $x, $z, Biome::TAIGA );
 	}
-	public function onPlayerJoinEvent(PlayerJoinEvent $event) {
+	public function Rain(PlayerJoinEvent $event) {
 		$player = $event->getPlayer();
 		$pk = new LevelEventPacket();
 		$pk->evid = 3001;
