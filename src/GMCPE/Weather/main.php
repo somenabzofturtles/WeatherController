@@ -25,6 +25,14 @@ class main extends PluginBase implements Listener {
 	$this->saveResource("Config.yml");	
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
 	}
+	public function onPlayerJoinEvent(PlayerJoinEvent $event) {
+		if ($this->getConfig()->get("Snow") === true) {
+		$this->Snow->onPlayerJoinEvent();
+		}
+		elseif ($this->getConfig()->get("Rain") === true) {
+		$this->Rain->onPlayerJoinEvent();
+		}
+	}	
 }
 
 ?>
