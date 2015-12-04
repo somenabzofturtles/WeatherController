@@ -1,7 +1,7 @@
 name: WeatherController
 main: GMCPE\Weather\main
-version: 1.0
-author: Driesboy
+version: 1.0TurtleSoft-ALPHA
+author: TurtleSoft
 api:
 - 1.13.0
 - 2.0.0
