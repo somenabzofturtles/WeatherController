@@ -1,4 +1,4 @@
-name: WeatherController
+name: TurtleWeather
 main: GMCPE\Weather\main
 version: 1.0TurtleSoft-ALPHA
 author: TurtleSoft
