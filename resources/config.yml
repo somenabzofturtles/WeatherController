@@ -1,3 +1,10 @@
-// This is a test alpha
+ _______         _   _   __          __        _   _               
+ |__   __|       | | | |  \ \        / /       | | | |              
+    | |_   _ _ __| |_| | __\ \  /\  / /__  __ _| |_| |__   ___ _ __ 
+    | | | | | '__| __| |/ _ \ \/  \/ / _ \/ _` | __| '_ \ / _ \ '__|
+    | | |_| | |  | |_| |  __/\  /\  /  __/ (_| | |_| | | |  __/ |   
+    |_|\__,_|_|   \__|_|\___| \/  \/ \___|\__,_|\__|_| |_|\___|_|   
+  A PocketMine plugin that adds weather to PocketMine 0.13!
+  Rain is currently turned to false turn it to true to make it enabled
 snow: true
 rain: false
